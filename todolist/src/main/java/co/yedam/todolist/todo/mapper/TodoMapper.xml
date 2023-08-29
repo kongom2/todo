@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.todolist.todo.mapper.TodoMapper">
+<select id="todoSelectList" resultType="co.yedam.todolist.todo.service.TodoVO">
+	select * from todo
+</select>
+
+	<insert id="todoInsert" parameterType="co.yedam.todolist.todo.service.TodoVO">
+	insert into todo (post_id,content, user_name, member_id, created_at, updated_at, title, complete)
+values (td_seq.nextval,#{content},#{userName},#{memberId},#{memberPassword},#{memberPassword}#{memberPassword},#{memberPassword})
+	</insert>
+
+</mapper>

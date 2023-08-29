@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.todolist.member.mapper.MemberMapper">
+	<select id="memberSelectList"
+		resultType="co.yedam.todolist.member.service.MemberVO">
+		select * from member
+	</select>
+	<insert id="memberInsert" parameterType="co.yedam.todolist.member.service.MemberVO">
+	insert into member 
+	values(mb_seq.nextval,#{memberName},#{memberPassword})
+	</insert>
+	
+	<delete id="memberDelete" parameterType="co.yedam.todolist.member.service.MemberVO">
+	delete from member
+	where member_id=#{memberId}
+	</delete>
+</mapper>
